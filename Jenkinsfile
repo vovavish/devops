@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t devops .'
+        sh '''docker stop vishnyakov
+docker rm vishnyakov
+docker build -t devops .'''
       }
     }
 
