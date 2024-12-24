@@ -11,7 +11,8 @@ pipeline {
       steps {
         sh '''docker ps -a --filter "name=vishnyakov" -q | xargs -r docker rm -f || true
 docker run -d --name vishnyakov devops
-docker exec vishnyakov npm test'''
+docker exec vishnyakov npm test
+docker rm -f vishnyakov'''
       }
     }
 
