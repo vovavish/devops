@@ -9,7 +9,8 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh '''docker run -d --name vishnyakov devops
+        sh '''docker rm -f $(docker ps -aq)
+docker run -d --name vishnyakov devops
 docker exec vishnyakov npm test
 docker rm -f vishnyakov'''
       }
