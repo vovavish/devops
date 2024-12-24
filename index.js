@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-    res.send('Вишняков Владимир ИДБ-21-12');
+    res.send('Вишняков Владимир ИДБ-21-12. Обновленная версия');
 });
 
 app.listen(PORT, () => {
