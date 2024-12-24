@@ -9,9 +9,9 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh '''docker run -d --name vishnyakov devops
-docker exec vishnyakov npm test
-docker rm -f vishnyakov'''
+        sh '''docker inspect -f \'{{.State.Running}}\' vishnyakov || docker rm -f vishnyakov
+docker run -d --name vishnyakov devops
+docker exec vishnyakov npm test'''
       }
     }
 
